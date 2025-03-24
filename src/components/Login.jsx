@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import Header from './Header'
 
 const Login = () => {
-    const [isSignInForm, setIsSignInForm] = useState(true)
+    const [isSignInForm, setIsSignInForm] = useState(true);
+    const handleButtonClick = () => {
+
+    }
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm)
     }
@@ -20,7 +23,7 @@ const Login = () => {
 
                 <input type="text" placeholder="Email Address" className='p-4 my-4 w-full bg-gray-700' />
                 <input type="password" placeholder="Password" className='p-4 my-4 w-full  bg-gray-700' />
-                <button className='bg-red-700 p-4 my-6 w-full rounded-lg'>{isSignInForm ? "Sign In" : "Sign Up"}</button>
+                <button onClick={handleButtonClick} className='bg-red-700 p-4 my-6 w-full rounded-lg'>{isSignInForm ? "Sign In" : "Sign Up"}</button>
                 <p onClick={toggleSignInForm} className='p-4 cursor-pointer'>
                     {isSignInForm ? "New to MoviesGPT? SignUp Now" : "Already register? SignIn now"}
                 </p>
