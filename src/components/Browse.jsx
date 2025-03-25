@@ -3,6 +3,7 @@ import Header from './Header'
 import { API_OPTIONS } from '../utils/constants'
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 import MainContainer from './MainContainer'
+import SecondryContainer from './SecondryContainer'
 
 const Browse = () => {
     useNowPlayingMovies()
@@ -10,6 +11,7 @@ const Browse = () => {
         <div>
             <Header></Header>
             <MainContainer></MainContainer>
+            <SecondryContainer></SecondryContainer>
         </div>
     )
 }
