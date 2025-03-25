@@ -11,6 +11,8 @@ const Login = () => {
     const handleButtonClick = () => {
         const message = checkValidateData(email.current.value, password.current.value);
         setErrorMessage(message)
+        //show message means show string error message
+        if (message) return
     }
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm)
