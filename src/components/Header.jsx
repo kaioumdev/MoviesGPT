@@ -20,7 +20,7 @@ const Header = () => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/auth.user
@@ -33,6 +33,7 @@ const Header = () => {
                 navigate("/")
             }
         });
+        return () => unsubscribe(); // Clean up subscription when component unmounts
     }, [])
     return (
         <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center'>
