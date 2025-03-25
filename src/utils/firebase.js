@@ -5,7 +5,6 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-console.log("apiKey", import.meta.env.VITE_messagingSenderId)
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_apiKey,
     authDomain: import.meta.env.VITE_authDomain,
