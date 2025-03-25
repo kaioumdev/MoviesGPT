@@ -34,7 +34,6 @@ const Login = () => {
                         console.log(user);
                         const { uid, email, displayName, photoURL } = auth.currentUser;
                         dispatch(addUser({ uid, email, displayName, photoURL }))
-                        navigate('/browse')
                         // ...
                         // ...
                     }).catch((error) => {
@@ -56,7 +55,6 @@ const Login = () => {
                     // Signed in 
                     const user = userCredential.user;
                     console.log(user);
-                    navigate('/browse')
                     // ...
                 })
                 .catch((error) => {
