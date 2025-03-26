@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/redux/userSlice';
 import { LOGO } from '../utils/constants';
+import { toggleGptSearch } from '../utils/redux/gptSlice';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ const Header = () => {
 
     const handleGptSearchClick = () => {
         //Toggle Gpt Search
+        dispatch(toggleGptSearch())
     }
     return (
         <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center'>
