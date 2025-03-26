@@ -41,6 +41,7 @@ const Header = () => {
             <img className='w-44' src={LOGO} alt="" />
             {
                 user && <div className='flex p-2'>
+                    <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg'>GPT Search</button>
                     <img className='h-12 w-12' src={user?.photoURL} alt="User" />
                     <button onClick={handleSignOut} className='font-bold text-white'>Sign Out</button>
                 </div>
