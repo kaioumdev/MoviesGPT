@@ -13,3 +13,5 @@ export const API_OPTIONS = {
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/"
 
 export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/f6e7f6df-6973-46ef-b98f-12560d2b3c69/web_tall_panel/BD-en-20250317-TRIFECTA-perspective_65450c69-6faa-4e0b-885c-8050f6db248f_large.jpg"
+
+export const SUPPORTED_LANGUAGES = [{ identifier: "en", language: "English" }, { identifier: "bengali", language: "Bengali" }, { identifier: "spanish", language: "Spanish" }]

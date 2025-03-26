@@ -5,7 +5,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/redux/userSlice';
-import { LOGO } from '../utils/constants';
+import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleGptSearch } from '../utils/redux/gptSlice';
 
 const Header = () => {
@@ -47,6 +47,11 @@ const Header = () => {
             <img className='w-44' src={LOGO} alt="" />
             {
                 user && <div className='flex p-2'>
+                    <select className='p-2 m-2 bg-gray-900 text-white'>
+                        {
+                            SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.language}</option>)
+                        }
+                    </select>
                     <button onClick={handleGptSearchClick} className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg'>GPT Search</button>
                     <img className='h-12 w-12' src={user?.photoURL} alt="User" />
                     <button onClick={handleSignOut} className='font-bold text-white'>Sign Out</button>
