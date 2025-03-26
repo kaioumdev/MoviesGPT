@@ -1,14 +1,15 @@
 import React from 'react'
 import Header from './Header'
-import { API_OPTIONS } from '../utils/constants'
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 import MainContainer from './MainContainer'
 import SecondryContainer from './SecondryContainer'
 import usePopularMovies from '../hooks/usePopularMovies'
+import useTopRatedMovies from '../hooks/useTopRatedMovies'
 
 const Browse = () => {
     useNowPlayingMovies()
     usePopularMovies()
+    useTopRatedMovies()
     return (
         <div>
             <Header></Header>
