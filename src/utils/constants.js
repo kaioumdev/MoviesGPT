@@ -17,4 +17,4 @@ export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/f6e7f6df-6973-
 export const SUPPORTED_LANGUAGES = [{ identifier: "en", language: "English" }, { identifier: "bengali", language: "Bengali" }, { identifier: "spanish", language: "Spanish" }]
 
 
-export const OPENAI_KEY = import.meta.env.VITE_OPENAI_KEY
+export const OPENAI_KEY = import.meta.env.VITE_NEW_OPENAI_KEY
