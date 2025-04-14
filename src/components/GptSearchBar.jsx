@@ -34,7 +34,9 @@ const GptSearchBar = () => {
         }
         console.log(gptResults.choices[0]?.message?.content);
         const gptMovies = gptResults.choices[0]?.message?.content.split(",");
-        const data = gptMovies.map((movie) => searchMovieTMDB(movie))
+        const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
+        const tmdbResults = await Promise.all(promiseArray);
+        console.log(tmdbResults);
     }
     return (
         <div className='pt-[10%] flex justify-center'>
