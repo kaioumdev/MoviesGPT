@@ -1,10 +1,12 @@
 import React, { useRef } from 'react'
 import lang from '../utils/languageConstants'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import openai from '../utils/openai';
 import { API_OPTIONS } from '../utils/constants';
+import { addGptMovieResult } from '../utils/redux/gptSlice';
 
 const GptSearchBar = () => {
+    const dispatch = useDispatch();
     const langKey = useSelector(store => store.config.lang);
     const searchText = useRef(null)
 
@@ -37,6 +39,7 @@ const GptSearchBar = () => {
         const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
         const tmdbResults = await Promise.all(promiseArray);
         console.log(tmdbResults);
+        dispatch(addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults }));
     }
     return (
         <div className='pt-[10%] flex justify-center'>
