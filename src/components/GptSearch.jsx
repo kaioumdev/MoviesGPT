@@ -16,8 +16,8 @@ const GptSearch = () => {
             </div>
 
             {/* Content Section */}
-            <div className=''>
-                <div className=''>
+            <div>
+                <div>
                     <GptSearchBar />
                     <GptMovieSuggestion />
                 </div>
